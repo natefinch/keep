@@ -44,11 +44,11 @@ const tsLayout = "2006-01-02T15:04:05.000Z"
 
 // These are values for the Period field of Reminders.
 const (
-	SpecificTime Period = iota
-	Morning             // 9am
-	Afternoon           // 1pm
-	Evening             // 5pm
-	Night               // 8pm
+	SpecificTime Period = iota // user-specified time
+	Morning                    // 9am
+	Afternoon                  // 1pm
+	Evening                    // 5pm
+	Night                      // 8pm
 )
 
 // These are values for the Color field of notes and lists.
@@ -89,9 +89,10 @@ type Item struct {
 // note.
 type ParentNode struct {
 	Node
-	Title    string `json:"title"`
-	Archived bool   `json:"isArchived"`
-	Color
+	Title     string     `json:"title"`
+	Archived  bool       `json:"isArchived"`
+	Color     Color      `json:"color"`
+	Reminders []Reminder `json:"reminders,omitempty"`
 }
 
 // Node represents an identity of an item of data in google keep.
@@ -117,7 +118,7 @@ type Timestamps struct {
 type Reminder struct {
 	Dismissed   Dismissed `json:"state"`
 	Description string    `json:"description"`
-	Time
+	Due         Time      `json:"due"`
 }
 
 // Time represents when a Reminder should notify the user.  The year, month, and
@@ -154,7 +155,7 @@ func (t *Time) Time() time.Time {
 	return time.Date(t.Year, time.Month(t.Month), t.Day, h, m, s, 0, time.Now().Location())
 }
 
-// Dismissed is a boolean type that serializes to DISMISSED or INITIAL
+// Dismissed is a boolean type with custom JSON serialization.
 type Dismissed bool
 
 // MarshalJSON implements json.Marhsaler.MarshalJSON.
@@ -179,7 +180,8 @@ func (d *Dismissed) UnmarshalJSON(b []byte) error {
 	return fmt.Errorf("expected %q or %q, got %q", dismissedVal, notDismissedVal, b)
 }
 
-// Period defines a broad timespan for reminders.
+// Period defines how the time of a Reminder is specified.  See the Time type to
+// see how Period is used.
 type Period int
 
 // MarshalJSON implements json.Marhsaler.MarshalJSON.
