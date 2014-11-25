@@ -139,3 +139,100 @@
     }
   ]
 }
+
+
+{
+  "requestHeader": {
+    "clientVersion": {
+      "major": "3",
+      "minor": "0",
+      "build": "0",
+      "revision": "0"
+    },
+    "clientPlatform": "WEB",
+    "capabilities": [
+      {
+        "type": "EC"
+      },
+      {
+        "type": "TR"
+      },
+      {
+        "type": "SH"
+      }
+    ],
+    "clientSessionId": "s--1416848191527--1981143408",
+    "clientLocale": "en"
+  },
+  "targetVersion": "3d5bc",
+  "clientTimestamp": "2014-11-24T16:57:45.142Z",
+  "nodes": [
+    {
+      "id": "13de54348bc.8dbb26d848cd094c",
+      "kind": "notes#node",
+      "parentId": "root",
+      "sortValue": 1048576,
+      "timestamps": {
+        "kind": "notes#timestamps",
+        "created": "2013-04-07T16:15:59.319Z",
+        "deleted": "1970-01-01T00:00:00.000Z",
+        "trashed": "1970-01-01T00:00:00.000Z",
+        "updated": "2014-11-24T16:57:44.986Z",
+        "userEdited": "2014-11-24T16:57:44.986Z"
+      },
+      "type": "LIST",
+      "title": "Groceries ",
+      "isArchived": false,
+      "color": "DEFAULT",
+      "reminders": [
+        {
+          "state": "DISMISSED",
+          "description": "Groceries  - Banana ; Coke zero; cfc0 +48 more",
+          "due": {
+            "year": 2014,
+            "month": 11,
+            "day": 17,
+            "period": "MORNING"
+          },
+          "serverId": "KEEP/v2/13H74DoNrozbnflgojAaW2889wb0u_lhJdoA-6217bM2r66enCdtybZ-Z88X_xUQqZgoS/R79f4bee"
+        }
+      ],
+      "nodeSettings": {
+        "checkedListItemsPolicy": "GRAVEYARD",
+        "graveyardState": "EXPANDED",
+        "newListItemPlacement": "BOTTOM"
+      },
+      "baseVersion": "19",
+      "serverId": "13H74DoNrozbnflgojAaW2889wb0u_lhJdoA-6217bM2r66enCdtybZ-Z88X_xUQqZgoS"
+    },
+    {
+      "id": "141d2212de1.85ccfc64aa40808e",
+      "kind": "notes#node",
+      "parentId": "13de54348bc.8dbb26d848cd094c",
+      "sortValue": 0,
+      "timestamps": {
+        "kind": "notes#timestamps",
+        "created": "2013-10-19T19:11:31.809Z",
+        "deleted": "1970-01-01T00:00:00.000Z",
+        "trashed": "1970-01-01T00:00:00.000Z",
+        "updated": "2014-11-24T16:57:44.986Z",
+        "userEdited": "1970-01-01T00:00:00.000Z"
+      },
+      "type": "LIST_ITEM",
+      "text": "Pita chips",
+      "checked": true,
+      "baseVersion": "1",
+      "serverId": "1h_hyNRxMe0vzsA9Pu7ifIefZAkmHPDiDfxL6alUAmPmGf0zuca1bZHIJKL1A6_HUTHEg",
+      "parentServerId": "13H74DoNrozbnflgojAaW2889wb0u_lhJdoA-6217bM2r66enCdtybZ-Z88X_xUQqZgoS"
+    }
+  ]
+}
+
+
+times {
+
+"MORNING": "9am",
+"AFTERNOON" : "1pm",
+"EVENING" : "5pm",
+"NIGHT" : "8pm"
+}
